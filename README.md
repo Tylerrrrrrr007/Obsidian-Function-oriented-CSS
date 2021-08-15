@@ -3,8 +3,11 @@ self-use css
 Collective CSS with various functions for personal use.
 ## Tag
 text-color: white
+
 background: blue
+
 rounded corners
+
 small size
 ps: for unique tags: darkred,steelblue,green
 ## Title
