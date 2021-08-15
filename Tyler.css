@@ -291,7 +291,6 @@ blockquote {
   font-family: Comic Sans MS;
   color: #cba203;
 }
-
 /**编辑区符号**/
 .cm-formatting.cm-formatting-header.cm-header {
   color: var(--text-accent);
