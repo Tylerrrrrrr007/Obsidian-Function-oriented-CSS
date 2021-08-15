@@ -1,0 +1,369 @@
+﻿.cm-s-obsidian .cm-header,
+/*————加粗、标签（单独设置的标签可自定义）的字体/颜色自己改————*/
+
+/*————加粗样式————*/
+
+/*字体颜色*/
+.cm-s-obsidian .cm-strong {
+/*font-family: Comic Sans MS;*/
+color: CornflowerBlue;
+}
+/*字体颜色*/
+strong
+{
+color: CornflowerBlue;
+/*font-family: Ink Free;*/
+}
+
+
+/*————默认字体————*/
+/*包括正文、标题栏、窗口等*/
+/*
+body {
+  --default-font: MV Boli;
+}
+*/
+
+
+/*————标签样式————*/
+
+/*颜色，字号，背景，圆角*/
+.tag{
+background-color: var(--text-accent);
+color : white;
+font-size: 11px;
+border-radius: 10px;
+padding: 1px 6px;
+}
+/*单独设置的标签*/
+.tag[href^="#eng"],
+.tag[href^="#⭐"] {
+	background-color: green;
+}
+.tag[href^="#奥卡姆剃刀"],
+.tag[href^="#okk"] {
+	background-color: SteelBlue;
+}
+.tag[href^="#笔记"],
+.tag[href^="#bgm"] {
+	background-color: darkred;
+}
+
+
+/*————![ ]的嵌入显示————*/
+
+/*变简洁，去掉上下两条线*/
+.markdown-preview-view .markdown-embed { border:none; padding:0; margin:0; }
+/*发光阴影*/
+.markdown-embed
+{
+  font-size: 13px;   /* bigger text to make up for the downscaling */
+  text-align: justify;
+  padding-left: 15px !important;
+  padding-right: 15px !important;
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.25);
+}
+.markdown-embed-title { display:none; }
+
+
+/*————显示文件夹父子关系————*/
+
+/* outliner for the file and folders */
+.nav-folder,.nav-file{
+  margin:0 !important;
+  border-left: 1px solid rgba(118,158,165,0.2);
+}
+
+
+/*————链接颜色————*/
+/*
+.cm-s-obsidian span.cm-url {
+  color: tan;
+}
+.cm-s-obsidian span.cm-link {
+  color: Peru;
+}
+*/
+
+
+/*————链接样式————*/
+
+/** editor mode **/
+
+.cm-s-obsidian span.cm-link,
+.cm-s-obsidian span.cm-hmd-internal-link {
+  text-shadow: -1px -1px 2px var(--background-secondary), -1px 1px 2px var(--background-secondary),
+    1px -1px 2px var(--background-secondary), 1px 1px 2px var(--background-secondary);
+  color: peru;
+  background-position: 0 100%;
+  background-repeat: repeat-x;
+  background-size: 5px 5px;
+  text-decoration: none;
+}
+
+.cm-s-obsidian span.cm-link {
+  background-image: linear-gradient(
+    to bottom,
+    var(--bg-sub-accent-55) 0%,
+    var(--bg-sub-accent-55) 100%
+  );
+}
+
+.cm-s-obsidian span.cm-hmd-internal-link {
+  background-image: linear-gradient(to bottom, var(--bg-accent-55) 0%, var(--bg-accent-55) 100%);
+}
+
+.cm-s-obsidian span.cm-formatting-link {
+  color: var(--text-faint) !important;
+  opacity: 0.25;
+}
+
+/** preview mode **/
+
+.external-link {
+  padding: 0;
+}
+
+.internal-link,
+.external-link {
+  text-shadow: -1px -1px 2px var(--background-primary), -1px 1px 2px var(--background-primary),
+    1px -1px 2px var(--background-primary), 1px 1px 2px var(--background-primary);
+  -webkit-text-fill-color: peru;
+  background-position: 0 100%;
+  background-repeat: repeat-x;
+  background-size: 5px 5px;
+  text-decoration: none;
+  transition: all 350ms ease;
+}
+
+.internal-link {
+  background-image: linear-gradient(to bottom, var(--bg-accent-55) 0%, var(--bg-accent-55) 100%);
+}
+
+.external-link {
+  background-image: linear-gradient(
+    to bottom,
+    var(--bg-sub-accent-55) 0%,
+    var(--bg-sub-accent-55) 100%
+  );
+}
+
+.internal-link:hover {
+  text-shadow: -1px -1px 2px var(--background-modifier-border),
+    -1px 1px 2px var(--background-modifier-border), 1px -1px 2px var(--background-modifier-border),
+    1px 1px 2px var(--background-modifier-border);
+  -webkit-text-fill-color: var(--text-accent);
+  background-size: 4px 50px;
+}
+
+.external-link:hover {
+  text-shadow: -1px -1px 2px var(--background-modifier-border),
+    -1px 1px 2px var(--background-modifier-border), 1px -1px 2px var(--background-modifier-border),
+    1px 1px 2px var(--background-modifier-border);
+  -webkit-text-fill-color: var(--text-sub-accent);
+  background-size: 4px 50px;
+}
+
+/* link */
+a,
+.internal-link,
+.cm-hmd-internal-link,
+.cm-link {
+  text-decoration: none !important;
+  color: var(--text-normal);
+  position: relative;
+  z-index: 1;
+}
+
+.cm-url {
+  color: var(--text-faint) !important;
+  opacity: 0.4;
+  font-weight: normal;
+}
+
+.cm-formatting-image {
+  color: var(--text-accent) !important;
+  opacity: 0.7;
+}
+
+/* link hover color */
+a:hover,
+.internal-link:hover {
+  text-decoration: none !important;
+  color: var(--text-accent);
+}
+
+
+/*————操作栏图标自动淡入淡出————*/
+
+.view-header:not(:hover) .view-actions {
+  opacity: 0.1;
+  transition: opacity .25s ease-in-out;
+}
+
+
+/*————>引用的块————*/
+
+/*前加引号*/
+/*
+blockquote:before {
+  font: 14px/20px italic Times, serif;
+  content: "“";
+  font-size: 3em;
+  line-height: 0.1em;
+  vertical-align: -0.4em;
+}
+blockquote p { display: inline; }
+*/
+/*适用黑暗主题的炫酷边缘*/
+blockquote {
+  margin-inline-start: 0;
+}
+
+.markdown-preview-view blockquote {
+  position: relative;
+  padding: 0.8rem 0rem 0.8rem 2rem;
+  color: #bdbdbd;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  margin-bottom: 0em;
+  margin-right: 0 !important;
+  border-left: 3px rgba(14, 210, 247, 0.5) solid;
+  border-top: transparent;
+  border-bottom: transparent;
+  border-right: transparent;
+  /*background: linear-gradient(135deg, rgba(32, 28, 41, 0.45), #100e17);*/
+  background: var(--quote-bg-color);
+}
+
+.markdown-preview-view blockquote::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0px;
+  height: 2px;
+  width: 60%;
+  background: var(--quote-line-up);
+}
+
+.markdown-preview-view blockquote::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0px;
+  height: 2px;
+  width: 25%;
+  background: var(--quote-line-down);
+}
+
+.markdown-preview-view blockquote p {
+  position: relative;
+}
+/*前加引号*/
+.markdown-preview-view blockquote p:first-of-type::before {
+  content: '“';
+  font-style: italic;
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--text-accent);
+  position: absolute;
+  top: -0.5rem;
+  left: -1.2rem;
+}
+
+
+/*————标题————*/
+
+.markdown-preview-view h1,
+.markdown-preview-view h2,
+.markdown-preview-view h3,
+.markdown-preview-view h4,
+.markdown-preview-view h5,
+.markdown-preview-view h6 {
+  /* padding-top: 1.25rem; */
+  margin: 20px 0 30px 0;
+  position: relative;
+  padding-bottom: 10px;
+  border-bottom: 1px solid;
+  border-width: 35%;
+  border-image-slice: 1;
+  border-image-source: linear-gradient(to right, var(--text-sub-accent), var(--text-sub-right), var(--text-sub-right), var(--text-sub-right));
+  font-family: Comic Sans MS;
+  color: #cba203;
+}
+
+/**编辑区符号**/
+.cm-formatting.cm-formatting-header.cm-header {
+  color: var(--text-accent);
+  opacity: 0.45;
+}
+
+
+/*————黑暗主题————*/
+
+.theme-dark {
+  --background-primary: #100e17;
+  --background-primary-alt: #0d0b12;
+  --background-secondary: #191621;
+  --background-secondary-alt: #0d0b12;
+  --text-normal: #bebebe;
+  --text-accent: #0fb6d6;
+  --text-sub-accent: #f4569d;
+  --text-dim: #45aaff;
+  /*--text-faint: #7aa2f7;*/	/*注释颜色*/
+  --text-link: #b4b4b4;
+  --text-a: #6bcafb;
+  --text-a-hover: #6bcafb;
+  --text-mark: #263d92;
+  --pre-code: #252525;
+  --interactive-accent: rgba(14, 210, 247, 0.5);
+  --interactive-accent-hover: rgba(14, 210, 247, 0.8);
+  --interactive-before: #5e6565;
+  --background-modifier-border: #92a1a17a;
+  --tag-background: #a7b0b3;
+  --interactive-accent-rgb: #3dd7fb;
+  --font-family-editor: 'Rubik';
+  --font-family-preview: 'Rubik';
+  --bg-sub-accent-55: rgba(244, 86, 157, 0.55);
+  --bg-accent-55: rgba(14, 210, 247, 0.55);
+
+  --text-highlight-bg: rgba(255,100,150, 0.25);
+
+  --background-modifier-border: rgba(14, 100, 247, 0.05);
+  --editor-border-color: #101014;
+  --quote-bg-color: linear-gradient(135deg, rgba(32, 28, 41, 0.45), #100e17);
+  --quote-line-up:linear-gradient(90deg, rgba(13, 185, 215, 0.5), #13111a);
+  --quote-line-down:linear-gradient(90deg, rgba(13, 185, 215, 0.5), #15131c);
+  --text-sub-right: #100e17;
+}
+
+/*————明亮主题————*/
+
+.theme-light {
+  --text-accent: #0fb6d6;
+  --text-sub-accent: #f4569d;
+  --text-dim: #45aaff;
+  /*--text-faint: #7aa2f7;*/	/*注释颜色*/
+  --text-link: #b4b4b4;
+  --text-a: #6bcafb;
+  --text-a-hover: #6bcafb;
+  --text-mark: #263d92;
+  --pre-code: #252525;
+  --interactive-accent: rgba(14, 210, 247, 0.5);
+  --interactive-accent-hover: rgba(14, 210, 247, 0.8);
+  --interactive-before: #5e6565;
+  --background-modifier-border: #92a1a17a;
+  --tag-background: #a7b0b3;
+  --interactive-accent-rgb: #3dd7fb;
+  --font-family-editor: 'Rubik';
+  --font-family-preview: 'Rubik';
+  --bg-sub-accent-55: rgba(244, 86, 157, 0.55);
+  --bg-accent-55: rgba(14, 210, 247, 0.55);
+  --text-highlight-bg: rgba(50,100,255, 0.15);
+  --background-modifier-border: rgba(0, 130, 180, 0.1);
+  --editor-border-color: #101014;
+  --quote-bg-color: linear-gradient(135deg, rgba(255, 255, 255, 0.45), #fffff);
+  --quote-line-up: linear-gradient(90deg, rgba(13, 185, 215, 0.5), #E0FFFF	);
+  --quote-line-down: linear-gradient(90deg, rgba(13, 185, 215, 0.5), #E0FFFF);
+  --text-sub-right: #E0FFFF;
+}
