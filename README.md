@@ -1,6 +1,6 @@
 # Obsidian-Function-oriented-CSS
 
-self-use css![](https://img.shields.io/github/v/release/tylerrrrrrr007/Obsidian-Function-oriented-CSS)
+self-use css[![](https://img.shields.io/github/v/release/tylerrrrrrr007/Obsidian-Function-oriented-CSS)](https://github.com/Tylerrrrrrr007/Obsidian-Function-oriented-CSS/releases/tag/2.0)
 
 Collective CSS with various functions for personal use.
 
