@@ -23,7 +23,56 @@ body {
   --default-font: MV Boli;
 }
 */
-
+/*引用网络字体*/
+@font-face {
+  font-family: 新闻;
+  src: url('https://raw.fastgit.org/Tylerrrrrrr007/Obsidian-Function-oriented-CSS/main/font/Press_Style_Extra%20L.ttf');
+  font-size:22px;
+}
+@font-face {
+  font-family: 金刚;
+  src: url('https://raw.fastgit.org/Tylerrrrrrr007/Obsidian-Function-oriented-CSS/main/font/Reeji_Diamond.ttf');
+  font-size:22px;
+}
+@font-face {
+  font-family: 北欧;
+  src: url('https://raw.fastgit.org/Tylerrrrrrr007/Obsidian-Function-oriented-CSS/main/font/Norwester.ttf');
+  font-size:22px;
+}
+@font-face {
+  font-family: "日落";
+  src: url('https://raw.fastgit.org/Tylerrrrrrr007/Obsidian-Function-oriented-CSS/main/font/Sunset_Boulevard.otf');
+  font-size:22px;
+}
+@font-face {
+  font-family: 魔鬼;
+  src: url('https://raw.fastgit.org/Tylerrrrrrr007/Obsidian-Function-oriented-CSS/main/font/the_devils_car.ttf');
+  font-size:22px;
+}
+@font-face {
+  font-family: 宗之;
+  src: url('https://raw.fastgit.org/Tylerrrrrrr007/Obsidian-Function-oriented-CSS/main/font/X_Pretty_Boy.ttf');
+  font-size:22px;
+}
+@font-face {
+  font-family: 婚礼;
+  src: url('https://raw.fastgit.org/Tylerrrrrrr007/Obsidian-Function-oriented-CSS/main/font/Shotgun_Wedding.otf');
+  font-size:22px;
+}
+@font-face {
+  font-family: 损坏;
+  src: url('https://raw.fastgit.org/Tylerrrrrrr007/Obsidian-Function-oriented-CSS/main/font/Very_Damaged.woff.ttf');
+  font-size:22px;
+}
+@font-face {
+  font-family: 将军;
+  src: url('https://raw.fastgit.org/Tylerrrrrrr007/Obsidian-Function-oriented-CSS/main/font/General.ttf');
+  font-size:22px;
+}
+/*调用元素font-family选择字体，加!important可取代设定的css样式*/
+/*[font-family='新闻']{
+  font-family: 新闻 !important;
+}*/
 
 /*————标签样式————*/
 
@@ -45,7 +94,7 @@ padding: 1px 6px;
 	background-color: SteelBlue;
 }
 .tag[href^="#笔记"],
-.tag[href^="#bgm"] {
+.tag[href^="#BGM"i] {
 	background-color: darkred;
 }
 
@@ -271,10 +320,17 @@ blockquote {
   left: -1.2rem;
 }
 
-
 /*————标题————*/
 
-.markdown-preview-view h1,
+.markdown-preview-view h1{
+  font-family: var(--eng-font), 金刚;
+  font-weight: normal;
+  text-align: center;
+  font: 380% var(--eng-font), 金刚;
+  /*font-size: 50px;*/
+  /*text-shadow: 3px -2px 2px purple;*/
+}
+
 .markdown-preview-view h2,
 .markdown-preview-view h3,
 .markdown-preview-view h4,
@@ -288,13 +344,67 @@ blockquote {
   border-width: 35%;
   border-image-slice: 1;
   border-image-source: linear-gradient(to right, var(--text-sub-accent), var(--text-sub-right), var(--text-sub-right), var(--text-sub-right));
-  font-family: Comic Sans MS;
-  color: #cba203;
+  font-family: 损坏,将军;
+  font-weight: normal;
+  /*color: #cba203;*/
 }
+
 /**编辑区符号**/
 .cm-formatting.cm-formatting-header.cm-header {
   color: var(--text-accent);
   opacity: 0.45;
+}
+
+/*???
+a:visited{
+color:green;
+}*/
+
+
+/*————规定所有图片宽度————*/
+
+img { 
+  /*绝对宽度*/
+  /*width:380px;*/
+  /*根据窗口自动填满*/
+  width:100%;
+}
+/*如果图片链接最后有#small*/
+img[src$="#small"] { 
+  /*窗口的五分之一*/
+  width:20%;
+}
+/*如果图片链接最后有#tag*/
+img[src$="#tag"] { 
+  /*窗口的五分之一*/
+  width:5%;
+}
+
+
+/*————分割线样式————*/
+
+.markdown-preview-view hr {
+  margin-block-start: 4em;
+  margin-block-end: 4em;
+  border: none;
+  height: 1px;
+  background-image: linear-gradient(
+    to right,
+    #100e17,
+    var(--text-accent),
+    var(--background-primary)
+  );
+}
+.markdown-preview-view hr::after {
+  content: '§';
+  display: inline-block;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(60deg);
+  transform-origin: 50% 50%;
+  padding: 0.5rem;
+  color: var(--text-sub-accent);
+  background-color: var(--background-primary);
 }
 
 
@@ -310,7 +420,6 @@ blockquote {
   --text-sub-accent: #f4569d;
   --text-dim: #45aaff;
   /*--text-faint: #7aa2f7;*/	/*注释颜色*/
-  --text-link: #b4b4b4;
   --text-a: #6bcafb;
   --text-a-hover: #6bcafb;
   --text-mark: #263d92;
@@ -321,15 +430,18 @@ blockquote {
   --background-modifier-border: #92a1a17a;
   --tag-background: #a7b0b3;
   --interactive-accent-rgb: #3dd7fb;
+  --font-family-editor: 'Rubik';
+  --font-family-preview: 'Rubik';
   --bg-sub-accent-55: rgba(244, 86, 157, 0.55);
   --bg-accent-55: rgba(14, 210, 247, 0.55);
   --text-highlight-bg: rgba(255,100,150, 0.25);
-  --background-modifier-border: rgba(14, 100, 247, 0.05);
+  --background-modifier-border: rgba(50, 150, 227, 0.2);
   --editor-border-color: #101014;
   --quote-bg-color: linear-gradient(135deg, rgba(32, 28, 41, 0.45), #100e17);
   --quote-line-up:linear-gradient(90deg, rgba(13, 185, 215, 0.5), #13111a);
   --quote-line-down:linear-gradient(90deg, rgba(13, 185, 215, 0.5), #15131c);
   --text-sub-right: #100e17;
+  --eng-font: 新闻;
 }
 
 /*————明亮主题————*/
@@ -339,7 +451,6 @@ blockquote {
   --text-sub-accent: #f4569d;
   --text-dim: #45aaff;
   /*--text-faint: #7aa2f7;*/	/*注释颜色*/
-  --text-link: #b4b4b4;
   --text-a: #6bcafb;
   --text-a-hover: #6bcafb;
   --text-mark: #263d92;
@@ -350,13 +461,17 @@ blockquote {
   --background-modifier-border: #92a1a17a;
   --tag-background: #a7b0b3;
   --interactive-accent-rgb: #3dd7fb;
+  --font-family-editor: 'Rubik';
+  --font-family-preview: 'Rubik';
   --bg-sub-accent-55: rgba(244, 86, 157, 0.55);
   --bg-accent-55: rgba(14, 210, 247, 0.55);
   --text-highlight-bg: rgba(50,100,255, 0.15);
-  --background-modifier-border: rgba(0, 130, 180, 0.1);
+  --background-modifier-border: rgba(0, 80, 200, 0.25);
   --editor-border-color: #101014;
   --quote-bg-color: linear-gradient(135deg, rgba(255, 255, 255, 0.45), #fffff);
   --quote-line-up: linear-gradient(90deg, rgba(13, 185, 215, 0.5), #E0FFFF	);
   --quote-line-down: linear-gradient(90deg, rgba(13, 185, 215, 0.5), #E0FFFF);
   --text-sub-right: #E0FFFF;
+  --eng-font: 婚礼;
+/* 婚礼 or 北欧 */
 }
