@@ -6,7 +6,7 @@ Collective CSS with various functions for personal use.
 
 ![](https://cdn.jsdelivr.net/gh/Tylerrrrrrr007/ImgBed/Obsidian/20210820233947.png)
 
-**ps**: The beautiful shining lines come from [Obsidianite](https://github.com/1stprinciples/Obsidian-Obsidianite). (Including background color and link style)
+**ps**: The beautiful shining lines come from [Obsidianite](https://github.com/bennyxguo/Obsidian-Obsidianite). (Including background color and link style)
 
 ## Tag
 ![](https://cdn.jsdelivr.net/gh/Tylerrrrrrr007/ImgBed/Obsidian/20210820230952.png)
